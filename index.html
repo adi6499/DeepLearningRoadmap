@@ -1,0 +1,224 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Deep Learning Roadmap Checklist</title>
+    <link rel="stylesheet" href="style.css"/>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">DL</div>
+        <div>
+          <h1>Deep Learning Roadmap Checklist</h1>
+          <p class="lead">Tick items as you learn — progress saved locally.</p>
+        </div>
+      </div>
+
+      <div class="controls" aria-hidden="false">
+        <div class="progress-wrap" title="Progress">
+          <div style="font-size:13px;color:var(--muted)">Progress</div>
+          <div class="progress-bar" id="progressBar"><i id="progressFill"></i></div>
+          <div id="progressPercent" style="width:42px;text-align:right;color:var(--muted);font-weight:700">0%</div>
+        </div>
+
+        <button class="btn" id="exportBtn" title="Export progress">Export</button>
+        <button class="btn ghost" id="importBtn" title="Import progress">Import</button>
+        <button class="btn ghost" id="resetBtn" title="Reset all">Reset</button>
+      </div>
+    </header>
+
+    <main>
+      <div class="section-title">Complete this checklist from fundamentals → advanced</div>
+
+      <ul class="checklist" id="checklist">
+        <!-- Beginner -->
+        <li class="item" data-id="0">
+          <div class="item-header">
+            <input type="checkbox" class="item-checkbox" />
+            <div>
+              <div class="item-title">Math & Python Fundamentals</div>
+              <div class="item-desc">Linear algebra, calculus basics, probability, NumPy & Python essentials.</div>
+            </div>
+          </div>
+          <ul class="sublist">
+            <li class="sub" data-id="0-0"><input type="checkbox" /> <div><strong>Linear Algebra</strong><small>Vectors, matrices, eigenvalues</small></div></li>
+            <li class="sub" data-id="0-1"><input type="checkbox" /> <div><strong>Calculus</strong><small>Derivatives, gradients</small></div></li>
+            <li class="sub" data-id="0-2"><input type="checkbox" /> <div><strong>Probability & Statistics</strong><small>Distributions, expectation</small></div></li>
+            <li class="sub" data-id="0-3"><input type="checkbox" /> <div><strong>Python + NumPy</strong><small>Arrays, broadcasting</small></div></li>
+          </ul>
+        </li>
+
+        <li class="item" data-id="1">
+          <div class="item-header">
+            <input type="checkbox" class="item-checkbox" />
+            <div>
+              <div class="item-title">Data Handling & Preprocessing</div>
+              <div class="item-desc">Pandas, cleaning, scaling, encoding, augmentation basics.</div>
+            </div>
+          </div>
+          <ul class="sublist">
+            <li class="sub" data-id="1-0"><input type="checkbox" /> <div><strong>Pandas</strong><small>Loading & manipulating data</small></div></li>
+            <li class="sub" data-id="1-1"><input type="checkbox" /> <div><strong>Missing data</strong><small>Imputation strategies</small></div></li>
+            <li class="sub" data-id="1-2"><input type="checkbox" /> <div><strong>Feature scaling</strong><small>Normalization & standardization</small></div></li>
+            <li class="sub" data-id="1-3"><input type="checkbox" /> <div><strong>Data augmentation</strong><small>Images / text techniques</small></div></li>
+          </ul>
+        </li>
+
+        <li class="item" data-id="2">
+          <div class="item-header">
+            <input type="checkbox" class="item-checkbox" />
+            <div>
+              <div class="item-title">Neural Network Basics</div>
+              <div class="item-desc">Perceptron, feedforward networks, activations, loss functions.</div>
+            </div>
+          </div>
+          <ul class="sublist">
+            <li class="sub" data-id="2-0"><input type="checkbox" /> <div><strong>Perceptron</strong><small>Single-layer unit</small></div></li>
+            <li class="sub" data-id="2-1"><input type="checkbox" /> <div><strong>Feedforward NN</strong><small>Fully connected layers</small></div></li>
+            <li class="sub" data-id="2-2"><input type="checkbox" /> <div><strong>Activation functions</strong><small>ReLU, Sigmoid, Tanh, Softmax</small></div></li>
+            <li class="sub" data-id="2-3"><input type="checkbox" /> <div><strong>Loss functions</strong><small>MSE, Cross-Entropy</small></div></li>
+          </ul>
+        </li>
+
+        <!-- Intermediate -->
+        <li class="item" data-id="3">
+          <div class="item-header">
+            <input type="checkbox" class="item-checkbox" />
+            <div>
+              <div class="item-title">Training & Optimization</div>
+              <div class="item-desc">Backpropagation, gradient descent variants, learning rate schedules.</div>
+            </div>
+          </div>
+          <ul class="sublist">
+            <li class="sub" data-id="3-0"><input type="checkbox" /> <div><strong>Backpropagation</strong><small>Chain rule for gradients</small></div></li>
+            <li class="sub" data-id="3-1"><input type="checkbox" /> <div><strong>SGD, Adam, RMSProp</strong><small>Optimizers</small></div></li>
+            <li class="sub" data-id="3-2"><input type="checkbox" /> <div><strong>LR scheduling</strong><small>Step, Cosine, Warmup</small></div></li>
+            <li class="sub" data-id="3-3"><input type="checkbox" /> <div><strong>Batching</strong><small>Batch size, mini-batch</small></div></li>
+          </ul>
+        </li>
+
+        <li class="item" data-id="4">
+          <div class="item-header">
+            <input type="checkbox" class="item-checkbox" />
+            <div>
+              <div class="item-title">Regularization & Generalization</div>
+              <div class="item-desc">Avoid overfitting with dropout, weight decay, early stopping.</div>
+            </div>
+          </div>
+          <ul class="sublist">
+            <li class="sub" data-id="4-0"><input type="checkbox" /> <div><strong>Dropout</strong><small>Randomly drop units</small></div></li>
+            <li class="sub" data-id="4-1"><input type="checkbox" /> <div><strong>Weight decay (L2)</strong><small>Penalize large weights</small></div></li>
+            <li class="sub" data-id="4-2"><input type="checkbox" /> <div><strong>Early stopping</strong><small>Stop when val loss increases</small></div></li>
+            <li class="sub" data-id="4-3"><input type="checkbox" /> <div><strong>Data augmentation</strong><small>Increase training variety</small></div></li>
+          </ul>
+        </li>
+
+        <li class="item" data-id="5">
+          <div class="item-header">
+            <input type="checkbox" class="item-checkbox" />
+            <div>
+              <div class="item-title">Convolutional Neural Networks (CNNs)</div>
+              <div class="item-desc">Convolutions, pooling, architectures (ResNet, EfficientNet).</div>
+            </div>
+          </div>
+          <ul class="sublist">
+            <li class="sub" data-id="5-0"><input type="checkbox" /> <div><strong>Conv layers</strong><small>Filters & kernels</small></div></li>
+            <li class="sub" data-id="5-1"><input type="checkbox" /> <div><strong>Pooling</strong><small>Max/Average pooling</small></div></li>
+            <li class="sub" data-id="5-2"><input type="checkbox" /> <div><strong>BatchNorm</strong><small>Stabilize training</small></div></li>
+            <li class="sub" data-id="5-3"><input type="checkbox" /> <div><strong>Transfer learning</strong><small>Use pretrained backbones</small></div></li>
+          </ul>
+        </li>
+
+        <li class="item" data-id="6">
+          <div class="item-header">
+            <input type="checkbox" class="item-checkbox" />
+            <div>
+              <div class="item-title">Sequence Models & Transformers</div>
+              <div class="item-desc">RNNs, LSTM/GRU, attention, and modern transformers.</div>
+            </div>
+          </div>
+          <ul class="sublist">
+            <li class="sub" data-id="6-0"><input type="checkbox" /> <div><strong>RNN</strong><small>Vanilla recurrent nets</small></div></li>
+            <li class="sub" data-id="6-1"><input type="checkbox" /> <div><strong>LSTM / GRU</strong><small>Handle long-term dependencies</small></div></li>
+            <li class="sub" data-id="6-2"><input type="checkbox" /> <div><strong>Attention</strong><small>Focus on important tokens</small></div></li>
+            <li class="sub" data-id="6-3"><input type="checkbox" /> <div><strong>Transformers</strong><small>BERT, GPT, encoder/decoder</small></div></li>
+          </ul>
+        </li>
+
+        <!-- Advanced -->
+        <li class="item" data-id="7">
+          <div class="item-header">
+            <input type="checkbox" class="item-checkbox" />
+            <div>
+              <div class="item-title">Generative Models</div>
+              <div class="item-desc">GANs, VAEs and diffusion models for data generation.</div>
+            </div>
+          </div>
+          <ul class="sublist">
+            <li class="sub" data-id="7-0"><input type="checkbox" /> <div><strong>GANs</strong><small>Generator vs Discriminator</small></div></li>
+            <li class="sub" data-id="7-1"><input type="checkbox" /> <div><strong>VAEs</strong><small>Latent variable generative models</small></div></li>
+            <li class="sub" data-id="7-2"><input type="checkbox" /> <div><strong>Diffusion Models</strong><small>State-of-the-art generation</small></div></li>
+          </ul>
+        </li>
+
+        <li class="item" data-id="8">
+          <div class="item-header">
+            <input type="checkbox" class="item-checkbox" />
+            <div>
+              <div class="item-title">Advanced Training Techniques</div>
+              <div class="item-desc">Mixed precision, distributed training, large-batch tricks.</div>
+            </div>
+          </div>
+          <ul class="sublist">
+            <li class="sub" data-id="8-0"><input type="checkbox" /> <div><strong>Mixed precision</strong><small>FP16 training</small></div></li>
+            <li class="sub" data-id="8-1"><input type="checkbox" /> <div><strong>Distributed training</strong><small>Multi-GPU / multi-node</small></div></li>
+            <li class="sub" data-id="8-2"><input type="checkbox" /> <div><strong>Gradient accumulation</strong><small>Large effective batch sizes</small></div></li>
+          </ul>
+        </li>
+
+        <li class="item" data-id="9">
+          <div class="item-header">
+            <input type="checkbox" class="item-checkbox" />
+            <div>
+              <div class="item-title">Evaluation, Interpretability & Ethics</div>
+              <div class="item-desc">Robust evaluation, model explainability, fairness and safety.</div>
+            </div>
+          </div>
+          <ul class="sublist">
+            <li class="sub" data-id="9-0"><input type="checkbox" /> <div><strong>Evaluation metrics</strong><small>Accuracy, BLEU, FID, etc.</small></div></li>
+            <li class="sub" data-id="9-1"><input type="checkbox" /> <div><strong>Interpretability</strong><small>SHAP, LIME, attention visualization</small></div></li>
+            <li class="sub" data-id="9-2"><input type="checkbox" /> <div><strong>Responsible AI</strong><small>Bias, fairness, privacy</small></div></li>
+          </ul>
+        </li>
+
+        <li class="item" data-id="10">
+          <div class="item-header">
+            <input type="checkbox" class="item-checkbox" />
+            <div>
+              <div class="item-title">Deployment & Production</div>
+              <div class="item-desc">Serving models, monitoring, CI/CD for ML systems.</div>
+            </div>
+          </div>
+          <ul class="sublist">
+            <li class="sub" data-id="10-0"><input type="checkbox" /> <div><strong>Model serialization</strong><small>Saved models with TorchScript/TensorFlow SavedModel</small></div></li>
+            <li class="sub" data-id="10-1"><input type="checkbox" /> <div><strong>Serving</strong><small>TF Serving, TorchServe, FastAPI</small></div></li>
+            <li class="sub" data-id="10-2"><input type="checkbox" /> <div><strong>Monitoring</strong><small>Performance & data drift</small></div></li>
+            <li class="sub" data-id="10-3"><input type="checkbox" /> <div><strong>Docker & Cloud</strong><small>AWS/GCP/Azure deployment</small></div></li>
+          </ul>
+        </li>
+      </ul>
+    </main>
+
+    <footer>Tip: press <strong>/</strong> to focus the page and use your keyboard to check items. Progress is stored in your browser.</footer>
+  </div>
+
+  <input type="file" id="importFile" accept="application/json" style="display:none" />
+
+  <script src="script.js">
+
+  </script>
+</body>
+</html>
